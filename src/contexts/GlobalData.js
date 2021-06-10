@@ -132,7 +132,7 @@ export default function Provider({ children }) {
     })
   }, [])
 
-  
+
   return (
     <GlobalDataContext.Provider
       value={useMemo(
@@ -220,8 +220,8 @@ const getChartData = async oldestDateToFetch => {
         fetchPolicy: 'cache-first'
       })
       skip += 1000
-      orgdata = orgdata.concat(result.data.snpPoolDayDatas)
-      if (result.data.snpPoolDayDatas.length < 1000) {
+      orgdata = orgdata.concat(result.data.wozxPoolDayDatas)
+      if (result.data.wozxPoolDayDatas.length < 1000) {
         allFound = true
       }
     }
@@ -232,13 +232,13 @@ const getChartData = async oldestDateToFetch => {
       const oneDay = 24 * 60 * 60
       let dayIndexArray = []
       orgdata.forEach((dayData, i) => {
-        
+
         if (!dayIndexSet.has((orgdata[i].date / oneDay).toFixed(0))) {
           dayIndexSet.add((orgdata[i].date / oneDay).toFixed(0))
           index++
           dealdata[index-1] = new Array(poolcount)
           dealdata[index-1][dayData.poolid] = dayData
-          
+
         }else{
           dealdata[index-1][dayData.poolid] = dayData
         }
@@ -312,8 +312,8 @@ const getGlobalTransactions = async () => {
     })
     transactions.mints = []
     transactions.burns = []
-    result?.data?.snpPoolTransations &&
-      result.data.snpPoolTransations.map(transaction => {
+    result?.data?.wozxPoolTransations &&
+      result.data.wozxPoolTransations.map(transaction => {
         if (transaction.operator === 0) {
           transactions.mints.push(transaction)
         }
@@ -346,8 +346,8 @@ async function getAllPools() {
         fetchPolicy: 'cache-first'
       })
       skipCount = skipCount + POOLS_TO_FETCH
-      pools = pools.concat(result?.data?.snpMasterPools)
-      if (result?.data?.snpMasterPools.length < POOLS_TO_FETCH || pools.length > POOLS_TO_FETCH) {
+      pools = pools.concat(result?.data?.wozxMasterPools)
+      if (result?.data?.wozxMasterPools.length < POOLS_TO_FETCH || pools.length > POOLS_TO_FETCH) {
         allFound = true
       }
     }
@@ -475,11 +475,11 @@ async function getTopStakesData(){
       query: TOP_STAKES,
       fetchPolicy: 'cache-first'
     })
-    
-    if (result?.data?.snpMasterPoolUsers){
-      topstakes = result.data.snpMasterPoolUsers
+
+    if (result?.data?.wozxMasterPoolUsers){
+      topstakes = result.data.wozxMasterPoolUsers
     }
-    
+
   } catch (e) {
     console.log(e)
   }

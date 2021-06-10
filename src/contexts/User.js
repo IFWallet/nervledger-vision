@@ -150,8 +150,8 @@ export function useUserTransactions(account) {
           let dealtransactions = {}
           dealtransactions.mints = []
           dealtransactions.burns = []
-          result?.data?.snpPoolTransations &&
-            result.data.snpPoolTransations.map(transaction => {
+          result?.data?.wozxPoolTransations &&
+            result.data.wozxPoolTransations.map(transaction => {
               if (transaction.operator === 0) {
                 dealtransactions.mints.push(transaction)
               }

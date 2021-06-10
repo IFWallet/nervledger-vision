@@ -64,11 +64,11 @@ export const SHARE_VALUE = (pairAddress, blocks) => {
   let queryString = 'query blocks {'
   queryString += blocks.map(
     block => `
-      t${block.timestamp}:pair(id:"${pairAddress}", block: { number: ${block.number} }) { 
+      t${block.timestamp}:pair(id:"${pairAddress}", block: { number: ${block.number} }) {
         reserve0
         reserve1
         reserveUSD
-        totalSupply 
+        totalSupply
         token0{
           derivedETH
         }
@@ -81,7 +81,7 @@ export const SHARE_VALUE = (pairAddress, blocks) => {
   queryString += ','
   queryString += blocks.map(
     block => `
-      b${block.timestamp}: bundle(id:"1", block: { number: ${block.number} }) { 
+      b${block.timestamp}: bundle(id:"1", block: { number: ${block.number} }) {
         ethPrice
       }
     `
@@ -218,7 +218,7 @@ export const USER_POSITIONS = gql`
 // where: { poolid_lt: 5},
 export const USER_TRANSACTIONS = gql`
   query transactions($user: Bytes!) {
-    snpPoolTransations(orderBy: timestamp, orderDirection: desc, where: { address: $user,poolid_lt: 5 }) {
+    wozxPoolTransations(orderBy: timestamp, orderDirection: desc, where: { address: $user,poolid_lt: 5 }) {
       id
       timestamp
       address
@@ -274,14 +274,14 @@ export const PAIR_DAY_DATA_BULK = (pairs, startTimestamp) => {
         totalSupply
         reserveUSD
       }
-    } 
+    }
 `
   return gql(queryString)
 }
 
 export const GLOBAL_CHART = gql`
   query snpDayDatas($startTime: Int!, $skip: Int!) {
-    snpPoolDayDatas(first: 1000, skip: $skip, where: { date_gt: $startTime ,poolid_lt: 5}, orderBy: date, orderDirection: asc) {
+    wozxPoolDayDatas(first: 1000, skip: $skip, where: { date_gt: $startTime ,poolid_lt: 5}, orderBy: date, orderDirection: asc) {
       id
       date
       poolid
@@ -292,7 +292,7 @@ export const GLOBAL_CHART = gql`
 
 export const POOL_CHART = gql`
   query snpDayDatas($poolid: String, $skip: Int!) {
-    snpPoolDayDatas(first: 1000, skip: $skip, orderBy: date, orderDirection: asc, where: { poolid: $poolid }) {
+    wozxPoolDayDatas(first: 1000, skip: $skip, orderBy: date, orderDirection: asc, where: { poolid: $poolid }) {
       id
       date
       poolid
@@ -305,7 +305,7 @@ export const POOL_CHART = gql`
 export const GLOBAL_DATA = block => {
   const queryString = ` query uniswapFactories {
       uniswapFactories(
-       ${block ? `block: { number: ${block}}` : ``} 
+       ${block ? `block: { number: ${block}}` : ``}
        where: { id: "${FACTORY_ADDRESS}" }) {
         id
         totalVolumeUSD
@@ -322,7 +322,7 @@ export const GLOBAL_DATA = block => {
 
 export const GLOBAL_TXNS = gql`
   query transactions {
-    snpPoolTransations(first: 100, orderBy: timestamp, orderDirection: desc) {
+    wozxPoolTransations(first: 100, orderBy: timestamp, orderDirection: desc) {
         id
         timestamp
         address
@@ -335,7 +335,7 @@ export const GLOBAL_TXNS = gql`
 
 export const TOP_STAKES = gql`
   query topstakes {
-    snpMasterPoolUsers(where: { poolid_lt: 5},first: 100, orderBy:  balance, orderDirection: desc) {
+    wozxMasterPoolUsers(where: { poolid_lt: 5},first: 100, orderBy:  balance, orderDirection: desc) {
       address
       poolid
       balance
@@ -431,7 +431,7 @@ export const ALL_PAIRS = gql`
 
 export const ALL_POOLS = gql`
   query pools($skip: Int!) {
-    snpMasterPools(first: 500, skip: $skip, orderBy: id) {
+    wozxMasterPools(first: 500, skip: $skip, orderBy: id) {
       id
       balance
       lpToken
@@ -483,7 +483,7 @@ export const PAIRS_CURRENT = gql`
 
 export const POOLS_CURRENT = gql`
   query pools {
-    snpMasterPools(first: 200, orderBy: id) {
+    wozxMasterPools(first: 200, orderBy: id) {
       id
     }
   }
@@ -612,7 +612,7 @@ export const TOKEN_DATA = (tokenAddress, block) => {
 
 export const POOL_TXNS = gql`
   query ($poolid: String) {
-    snpPoolTransations(first: 100,where: { poolid: $poolid }, orderBy: timestamp, orderDirection: desc) {
+    wozxPoolTransations(first: 100,where: { poolid: $poolid }, orderBy: timestamp, orderDirection: desc) {
         id
         timestamp
         address

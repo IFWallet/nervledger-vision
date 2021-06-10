@@ -153,8 +153,8 @@ const getPoolTransactions = async poolid => {
     })
     transactions.mints = []
     transactions.burns = []
-    result?.data?.snpPoolTransations &&
-      result.data.snpPoolTransations.map(transaction => {
+    result?.data?.wozxPoolTransations &&
+      result.data.wozxPoolTransations.map(transaction => {
         if (transaction.operator === 0) {
           transactions.mints.push(transaction)
         }
@@ -213,8 +213,8 @@ const getPoolChartData = async poolid => {
         fetchPolicy: 'cache-first'
       })
       skip += 1000
-      data = data.concat(result.data.snpPoolDayDatas)
-      if (result.data.snpPoolDayDatas.length < 1000) {
+      data = data.concat(result.data.wozxPoolDayDatas)
+      if (result.data.wozxPoolDayDatas.length < 1000) {
         allFound = true
       }
     }

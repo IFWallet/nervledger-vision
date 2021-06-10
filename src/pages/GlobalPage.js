@@ -89,13 +89,13 @@ function GlobalPage() {
               </Panel>
             </Box>
           )}
-          
+
           <AutoColumn style={{ marginTop: '6px' }} gap="24px">
             <Panel style={{ height: '100%', minHeight: '300px' }}>
               <GlobalChart display="liquidity" />
             </Panel>
           </AutoColumn>
-          
+
           <ListOptions gap="10px" style={{ marginTop: '2rem', marginBottom: '.5rem' }}>
             <RowBetween>
               <TYPE.main fontSize={'1rem'}>Top Pools</TYPE.main>

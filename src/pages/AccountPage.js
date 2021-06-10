@@ -90,7 +90,7 @@ function AccountPage({ account }) {
             </AccountWrapper>
           </RowBetween>
         </Header>
-        <DashboardWrapper>          
+        <DashboardWrapper>
           <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
             Transactions
           </TYPE.main>{' '}
@@ -124,7 +124,7 @@ function AccountPage({ account }) {
                 </TYPE.header>
                 <TYPE.main>Total Remove</TYPE.main>
               </AutoColumn>
-              
+
             </AutoRow>
           </Panel>
         </DashboardWrapper>
