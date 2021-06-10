@@ -68,7 +68,7 @@ const GlobalChart = ({ display }) => {
   if (dailyData&& dailyData.length>0){
     totaltoken = dailyData[dailyData.length -1].totalToken;
   }
-  
+
   let baseChange = 100;
   if (dailyData && dailyData.length>1){
     baseChange = 100*(dailyData[dailyData.length -1].totalToken - dailyData[dailyData.length -2].totalToken)/dailyData[dailyData.length -2].totalToken;

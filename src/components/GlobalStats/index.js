@@ -24,7 +24,7 @@ export default function GlobalStats() {
 
   const [showPriceCard, setShowPriceCard] = useState(false)
 
-  const { snpPrice } = useGlobalData()
+  const { wozxPrice } = useGlobalData()
 
 
   return (
@@ -46,7 +46,7 @@ export default function GlobalStats() {
           )}
           {!below400 && (
             <TYPE.main mr={'1rem'}>
-              SNP Price: <Medium>{formattedNum(snpPrice,true)}</Medium>&nbsp;
+              WOZX Price: <Medium>{formattedNum(wozxPrice,true)}</Medium>&nbsp;
             </TYPE.main>
           )}
         </RowFixed>

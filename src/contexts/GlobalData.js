@@ -3,6 +3,8 @@ import { clientnew,clientuni} from '../apollo/client'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { useTimeframe } from './Application'
+import { getPrice } from "../utils/service"
+
 import {
   getTimeframe,
   getBalanceNumber
@@ -367,7 +369,17 @@ export function useGlobalData() {
 
   useEffect(() => {
     async function fetchData() {
-      let globalData = await getGlobalData()
+      // let globalData = await getGlobalData()
+      let token = 'wozx'
+      let price_usd = await getPrice(token).then((res) => {
+        if (res.status === 200) {
+          return res.data[token]["usd"]
+        }
+
+      }).catch((err) => {
+        return 0
+      })
+      let globalData = {"wozxPrice": price_usd}
       globalData && update(globalData)
 
       let allPools = await getAllPools()

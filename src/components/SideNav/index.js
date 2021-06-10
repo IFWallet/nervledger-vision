@@ -154,22 +154,22 @@ function SideNav({ history }) {
           </AutoColumn>
           <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
             <HeaderText>
-              <Link href="https://app.nervledger.fi" target="_blank">
-                app.nervledger.fi
+              <Link href="./" target="_blank">
+                Staking App
               </Link>
             </HeaderText>
             <HeaderText>
-              <Link href="https://www.yuque.com/books/share/7d75d2f8-fc61-4d7a-a0c1-d45b1ed6b6d1?#" target="_blank">
+              <Link href="https://www.yuque.com/wozxfarm" target="_blank">
                 Docs
               </Link>
             </HeaderText>
             <HeaderText>
-              <Link href="https://discord.gg/bNN5Ae" target="_blank">
-                Discord
+              <Link href="https://t.me/EFFORCE_ICO" target="_blank">
+                Telegram
               </Link>
             </HeaderText>
             <HeaderText>
-              <Link href="https://twitter.com/NevrLedger" target="_blank">
+              <Link href="https://twitter.com/EfforceOfficial" target="_blank">
                 Twitter
               </Link>
             </HeaderText>
