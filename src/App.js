@@ -97,12 +97,12 @@ function App() {
                       </LayoutWrapper>
                     )
                   } else {
-                    return <Redirect to="/home" />
+                    return <Redirect to="/info" />
                   }
                 }}
               />
 
-              <Route path="/home">
+              <Route path="/info">
                 <LayoutWrapper>
                   <GlobalPage />
                 </LayoutWrapper>
@@ -120,7 +120,7 @@ function App() {
                 </LayoutWrapper>
               </Route>
 
-              <Redirect to="/home" />
+              <Redirect to="/info" />
             </Switch>
           </BrowserRouter>
         ) : (

@@ -21,7 +21,7 @@ export const clientuni = new ApolloClient({
 export const clientnew = new ApolloClient({
   link: new HttpLink({
     // uri: 'https://api.thegraph.com/subgraphs/name/lkbtboy/snp'
-    uri: 'http://47.52.172.230:8000/subgraphs/name/calvin-yang/Wozxcalvin'
+    uri: 'https://api.thegraph.com/subgraphs/name/calvin-yang/wozxcalvin'
   }),
   cache: new InMemoryCache(),
   shouldBatch: true
