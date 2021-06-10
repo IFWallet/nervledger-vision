@@ -1,10 +1,4 @@
-# Nerv Ledger History
-
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-Transaction and stake pool stats for [Nerv Ledger](https://app.nervledger.fi).
-
-Check it out live: [https://info.nervledger.fi](https://info.nervledger.fi).
+# WOZX Farm Browser
 
 ### To Start Development
 
