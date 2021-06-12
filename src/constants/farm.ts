@@ -3,17 +3,17 @@ import wozx from "../assets/wozx.png";
 
 export const OneDay = 86400;
 export const stakePools: Farm[] = [
-  {
-    pid: 0,
-    symbol: "WOZX",
-    name: "WOZX",
-    id: "0",
-    icon: wozx,
-    decimals: 18,
-    lockPeriod: 0,
-    unlockPeriod: 0,
-    allocPoint: 0,
-  },
+  // {
+  //   pid: 0,
+  //   symbol: "WOZX",
+  //   name: "WOZX",
+  //   id: "0",
+  //   icon: wozx,
+  //   decimals: 18,
+  //   lockPeriod: 0,
+  //   unlockPeriod: 0,
+  //   allocPoint: 0,
+  // },
   {
     pid: 1,
     symbol: "WOZX",
@@ -21,8 +21,8 @@ export const stakePools: Farm[] = [
     id: "1",
     icon: wozx,
     decimals: 18,
-    lockPeriod: ONE_DAY * 14,
-    unlockPeriod: ONE_DAY * 2,
+    lockPeriod: OneDay * 14,
+    unlockPeriod: OneDay * 2,
     allocPoint: 0,
   },
   {
@@ -32,8 +32,8 @@ export const stakePools: Farm[] = [
     id: "2",
     icon: wozx,
     decimals: 18,
-    lockPeriod: ONE_DAY * 30,
-    unlockPeriod: ONE_DAY * 2,
+    lockPeriod: OneDay * 30,
+    unlockPeriod: OneDay * 2,
     allocPoint: 1.5,
   },
   {
@@ -43,8 +43,8 @@ export const stakePools: Farm[] = [
     id: "3",
     icon: wozx,
     decimals: 18,
-    lockPeriod: ONE_DAY * 90,
-    unlockPeriod: ONE_DAY * 2,
+    lockPeriod: OneDay * 90,
+    unlockPeriod: OneDay * 2,
     allocPoint: 2.5,
   },
   {
@@ -54,21 +54,21 @@ export const stakePools: Farm[] = [
     id: "4",
     icon: wozx,
     decimals: 18,
-    lockPeriod: ONE_DAY * 180,
-    unlockPeriod: ONE_DAY * 2,
+    lockPeriod: OneDay * 180,
+    unlockPeriod: OneDay * 2,
     allocPoint: 4,
   },
-  {
-    pid: 5,
-    symbol: "WOZX",
-    name: "WOZX(1 Year)",
-    id: "4",
-    icon: wozx,
-    decimals: 18,
-    lockPeriod: ONE_DAY * 365,
-    unlockPeriod: ONE_DAY * 2,
-    allocPoint: 8,
-  },
+  // {
+  //   pid: 5,
+  //   symbol: "WOZX",
+  //   name: "WOZX(1 Year)",
+  //   id: "4",
+  //   icon: wozx,
+  //   decimals: 18,
+  //   lockPeriod: OneDay * 365,
+  //   unlockPeriod: OneDay * 2,
+  //   allocPoint: 8,
+  // },
 ];
 
 export const getFarm = (id: string): Farm => {

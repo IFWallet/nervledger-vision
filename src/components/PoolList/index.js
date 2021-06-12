@@ -105,6 +105,9 @@ function PoolList({ pools, disbaleLinks, maxItems = 10 }) {
   const ListItem = ({ pool, index }) => {
 
     const farm = getFarm(pool.id)
+    if (!farm || farm == undefined) {
+      return ""
+    }
     return (
       <DashGrid style={{ height: '48px' }} disbaleLinks={disbaleLinks} focus={true}>
         {!below600 && (

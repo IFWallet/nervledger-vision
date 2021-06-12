@@ -148,6 +148,11 @@ const ITEMS_PER_PAGE = 10
 function getTransactionType(event, symbol0, symbol1) {
   const formattedS0 = symbol0?.length > 8 ? symbol0.slice(0, 7) + '...' : symbol0
   const farm = getFarm(symbol0)
+
+  if (!farm || farm == undefined) {
+    return ""
+  }
+
   switch (event) {
     case TXN_TYPE.ADD:
       return 'Add ' + farm.name + ' pool '
@@ -250,6 +255,11 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
 
   const ListItem = ({ item }) => {
     const farm = getFarm(item.token0Symbol)
+
+    if (!farm || farm == undefined) {
+      return ""
+    }
+
     return (
       <DashGrid style={{ height: '48px' }}>
         <DataText area="txn" fontWeight="500">

@@ -102,6 +102,11 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
 
   const ListItem = ({ lp, index }) => {
     const farm = getFarm(lp.poolid)
+
+    if (!farm || farm == undefined) {
+      return ""
+    }
+
     return (
       <DashGrid style={{ height: '48px' }} disbaleLinks={disbaleLinks} focus={true}>
         {!below600 && (
