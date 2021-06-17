@@ -3,17 +3,6 @@ import wozx from "../assets/wozx.png";
 
 export const OneDay = 86400;
 export const stakePools: Farm[] = [
-  // {
-  //   pid: 0,
-  //   symbol: "WOZX",
-  //   name: "WOZX",
-  //   id: "0",
-  //   icon: wozx,
-  //   decimals: 18,
-  //   lockPeriod: 0,
-  //   unlockPeriod: 0,
-  //   allocPoint: 0,
-  // },
   {
     pid: 1,
     symbol: "WOZX",
@@ -58,17 +47,6 @@ export const stakePools: Farm[] = [
     unlockPeriod: OneDay * 2,
     allocPoint: 4,
   },
-  // {
-  //   pid: 5,
-  //   symbol: "WOZX",
-  //   name: "WOZX(1 Year)",
-  //   id: "4",
-  //   icon: wozx,
-  //   decimals: 18,
-  //   lockPeriod: OneDay * 365,
-  //   unlockPeriod: OneDay * 2,
-  //   allocPoint: 8,
-  // },
 ];
 
 export const getFarm = (id: string): Farm => {
